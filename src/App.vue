@@ -12,7 +12,6 @@ export default {
   },
 };
 </script>
-</script>
 <style lang="less">
 * {
   margin: 0;
