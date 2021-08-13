@@ -2,10 +2,10 @@
   <div v-animate-css="'fadeIn'" class="news-infomation-container">
     <div class="new-item pointer" v-for="el in picUrls" :key="el.id">
       <div
-        v-animate-css.hover="{ classes: 'bounceIn', delay: 100, duration: 900 }"
+        v-animate-css.hover="{ classes: 'bounceIn', delay: 100, duration: 1000 }"
         class="center"
       >
-        <a :href="el.webUrl">
+        <a target="_blank" :href="el.webUrl">
           <el-image
             style="width: 88px; height: 88px"
             :src="el.path"
