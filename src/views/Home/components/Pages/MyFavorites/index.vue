@@ -131,7 +131,5 @@ export default {
     }
   }
 }
-.el-popover {
-  padding-bottom: 0px !important;
-}
+
 </style>
