@@ -2,7 +2,7 @@
   <div v-animate-css="'fadeIn'" class="news-infomation-container">
     <div class="new-item pointer" v-for="el in picUrls" :key="el.id">
       <div
-        v-animate-css.hover="{ classes: 'bounceIn', delay: 100, duration: 1000 }"
+        v-animate-css.hover="{ classes: 'pulse', delay: 50, duration: 500 }"
         class="center"
       >
         <a target="_blank" :href="el.webUrl">

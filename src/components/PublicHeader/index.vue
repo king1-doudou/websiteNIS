@@ -27,10 +27,10 @@ export default {
   },
   methods: {
     getNowTime() {
-      let newTime = moment().format("YYYY-MM-DD hh:mm:ss");
+      let newTime = moment().format("YYYY-MM-DD HH:mm:ss");
       this.nowTime = newTime;
       setInterval(() => {
-        newTime = moment().format("YYYY-MM-DD hh:mm:ss");
+        newTime = moment().format("YYYY-MM-DD HH:mm:ss");
         this.nowTime = newTime;
       }, 1000);
     },

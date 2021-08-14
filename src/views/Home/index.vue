@@ -19,15 +19,12 @@
 </template>
 
 <script>
-import PublicHeader from "../../components/PublicHeader";
-import SearchBox from "../../components/SearchBox";
-import HoverTab from "./components/HoverTab";
 export default {
   name: "Home",
   components: {
-    PublicHeader,
-    SearchBox,
-    HoverTab,
+    PublicHeader: () => import("../../components/PublicHeader"),
+    SearchBox: () => import("../../components/SearchBox"),
+    HoverTab: () => import("./components/HoverTab"),
   },
 };
 </script>
