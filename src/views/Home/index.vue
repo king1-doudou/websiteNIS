@@ -1,5 +1,9 @@
 <template>
   <div class="app-container">
+    <div v-if="!$store.state.isLogin" class="mask">
+      <login />
+    </div>
+
     <div class="head-container">
       <public-header />
     </div>
@@ -19,12 +23,19 @@
 </template>
 
 <script>
+import Login from "../Login";
 export default {
   name: "Home",
+  data() {
+    return {
+      isLogin: true,
+    };
+  },
   components: {
     PublicHeader: () => import("../../components/PublicHeader"),
     SearchBox: () => import("../../components/SearchBox"),
     HoverTab: () => import("./components/HoverTab"),
+    Login,
   },
 };
 </script>
@@ -73,5 +84,15 @@ export default {
       background-size: cover;
     }
   }
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000 !important;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>

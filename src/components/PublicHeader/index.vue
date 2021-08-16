@@ -5,9 +5,25 @@
     </div>
     <div class="user-info">
       <div class="user-image">
-          <el-avatar size="medium" :src="imgUrl"></el-avatar>
+        <el-avatar size="medium" :src="imgUrl"></el-avatar>
       </div>
-      <div class="user-name">admin</div>
+      <el-dropdown :hide-timeout="250" @command="handleCommand">
+        <span class="el-dropdown-link">
+          <span class="user-name pointer">{{ $store.state.userName }}</span>
+          <i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item icon="el-icon-s-tools" command="setting"
+            >设置</el-dropdown-item
+          >
+          <el-dropdown-item icon="el-icon-s-tools" command="settingWord"
+            >设置搜索词条</el-dropdown-item
+          >
+          <el-dropdown-item icon="el-icon-switch-button" command="exit"
+            >退出</el-dropdown-item
+          >
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -34,6 +50,29 @@ export default {
         this.nowTime = newTime;
       }, 1000);
     },
+    handleCommand(command) {
+      console.log(command);
+      switch (command) {
+        case "setting":
+          // 设置页
+          break;
+
+        case "settingWord":
+          // 设置搜索词条页
+          break;
+
+        case "exit":
+          // 登出
+          sessionStorage.removeItem("token");
+          localStorage.removeItem("UserName");
+          this.$store.dispatch("loginAction", false);
+          this.$store.dispatch("setUserNameAction", "ADMIN");
+          break;
+
+        default:
+          break;
+      }
+    },
   },
 };
 </script>
@@ -52,7 +91,6 @@ export default {
     display: flex;
     .user-image {
       padding-right: 10px;
-
     }
   }
 }

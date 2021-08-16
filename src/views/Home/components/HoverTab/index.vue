@@ -4,7 +4,7 @@
     <el-tab-pane label="热点新闻" name="hotNews">
       <hot-news />
     </el-tab-pane>
-    <el-tab-pane label="新闻咨询" name="NewsInformation">
+    <el-tab-pane label="新闻资讯" name="NewsInformation">
       <news-information />
     </el-tab-pane>
     <el-tab-pane label="财经网站" name="financialWebsite">

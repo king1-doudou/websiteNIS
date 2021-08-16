@@ -7,8 +7,7 @@
 export default {
   name: "app",
   data() {
-    return {
-    }
+    return {};
   },
 };
 </script>
@@ -25,6 +24,6 @@ export default {
   max-height: 100vh;
   background-color: #f5f5f5;
   padding: 0 0 20px 0;
-
 }
+
 </style>
